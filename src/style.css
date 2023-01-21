@@ -1,0 +1,27 @@
+font-face {
+    font-family: 'roboto';
+    src: url(./assets/fonts/Roboto-Regular.ttf) format(opentype);
+}
+
+:root {
+    --color-1: #D4ECDD;
+    --color-2: #345B63;
+    --color-3: #152D35;
+    --color-4: #112031;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+body {
+    background-color: var(--color-1);
+    color: var(--color-1);
+    font-family: 'roboto';
+}
