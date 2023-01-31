@@ -96,10 +96,6 @@ body {
     background-color: var(--color-3);
 }
 
-#submenu > a:hover {
-    color: brown;
-}
-
 /* slider */
 
 #slider {
@@ -112,20 +108,22 @@ body {
 }
 
 .arrow > i {
-    color: rgb(58, 58, 58);
+    color: var(--color-4);
     font-size: 24px;
     padding: 0 18px;
     transition: color 180ms;
 }
 
 .arrow > i:hover {
-    color: rgb(99, 99, 99);
+    color: var(--color-2);
     cursor: pointer;
 }
 
 #img-container {
     height: 320px;
     width: 80%;
+    display: flex;
+    justify-content: center;
 }
 
 #img {
@@ -133,3 +131,18 @@ body {
     height: 100%;
     background-color: #64abb9;
 }
+ #nav {
+    position: absolute;
+    top: 410px;
+    background-color: var(--color-1);
+    opacity: .5;
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-around;
+ }
+
+ #nav > i {
+    color: var(--color-2);
+    padding: 7px 12px;
+    font-size: 9px;
+ }
