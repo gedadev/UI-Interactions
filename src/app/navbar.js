@@ -1,11 +1,16 @@
 export class Navbar {
     
-    submenu(drop, subitems) {
-        drop.addEventListener('click', () => {
-            if (subitems.classList.contains('visible')) {
-                subitems.classList.remove('visible');
+    constructor(drop, subitems) {
+        this.drop = drop;
+        this.subitems = subitems;
+    }
+
+    submenu() {
+        this.drop.addEventListener('click', () => {
+            if (this.subitems.classList.contains('visible')) {
+                this.subitems.classList.remove('visible');
             } else {
-                subitems.classList.add('visible');
+                this.subitems.classList.add('visible');
             };
         });    
     }
