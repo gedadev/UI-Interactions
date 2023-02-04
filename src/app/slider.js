@@ -14,25 +14,23 @@ export class Slider {
     run() {
         const gallery = this.importImages(this.images);
         this.img.src = gallery[0];
-        // let interval = this.startSlider(gallery);
+        let interval = this.startSlider(gallery);
         this.arrowFunction(gallery);
     }
     
     startSlider(gallery) {        
         let interval = setInterval(() => {
             this.img.src = this.nextImage(gallery);
-        }, 3000);
+        }, 5000);
         return interval;
     }
 
     arrowFunction(gallery) {
         this.nextArrow.addEventListener(('click'), () => {
-            console.log(this.img);
             this.img.src = this.nextImage(gallery);
         });
         this.prevArrow.addEventListener(('click'), () => {
-            console.log(this.img);
-            // this.img.src = this.nextImage(gallery);
+            this.img.src = this.prevImage(gallery);
         });
     }
     
@@ -48,11 +46,15 @@ export class Slider {
         }
     }
 
-    // prevImage(gallery) {
-    //     for (let i = 0; i < gallery.length; i++) {
-    //         if (gallery[i] === this.img.src) {
-
-    //         }
-    //     }
-    // }  
+    prevImage(gallery) {
+        for (let i = 0; i < gallery.length; i++) {
+            if (gallery[i] === this.img.src) {
+                if (i === 0) {
+                    return gallery[gallery.length - 1];
+                } else {
+                    return gallery[i - 1];
+                }
+            }
+        }
+    }  
 }
