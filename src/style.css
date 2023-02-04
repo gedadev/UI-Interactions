@@ -135,7 +135,7 @@ body {
     position: absolute;
     top: 410px;
     background-color: var(--color-1);
-    opacity: .5;
+    opacity: .7;
     border-radius: 10px;
     display: flex;
     justify-content: space-around;
