@@ -1,7 +1,10 @@
 export class Slider {
     
-    constructor(images) {
+    constructor(images, img, prevArrow, nextArrow) {
         this.images = images;
+        this.img = img;
+        this.prevArrow = prevArrow;
+        this.nextArrow = nextArrow;
     }
     
     importImages(r) {
@@ -10,21 +13,32 @@ export class Slider {
     
     run() {
         const gallery = this.importImages(this.images);
-        this.displayImage(gallery);
+        this.img.src = gallery[0];
+        // let interval = this.startSlider(gallery);
+        this.arrowFunction(gallery);
     }
     
-    displayImage(gallery) {
-        const img = document.querySelector('#img');
-        img.src = gallery[0];
+    startSlider(gallery) {        
+        let interval = setInterval(() => {
+            this.img.src = this.nextImage(gallery);
+        }, 3000);
+        return interval;
+    }
 
-        setInterval(() => {
-            img.src = this.nextImage(img.src, gallery);  
-        }, 2000);
+    arrowFunction(gallery) {
+        this.nextArrow.addEventListener(('click'), () => {
+            console.log(this.img);
+            this.img.src = this.nextImage(gallery);
+        });
+        this.prevArrow.addEventListener(('click'), () => {
+            console.log(this.img);
+            // this.img.src = this.nextImage(gallery);
+        });
     }
     
-    nextImage(currentImg, gallery) {
+    nextImage(gallery) {
         for (let i = 0; i < gallery.length; i++) {
-            if (gallery[i] === currentImg) {
+            if (gallery[i] === this.img.src) {
                 if (gallery[i + 1] === undefined) {
                     return gallery[0];
                 } else {
@@ -32,5 +46,13 @@ export class Slider {
                 }
             }
         }
-    }   
+    }
+
+    // prevImage(gallery) {
+    //     for (let i = 0; i < gallery.length; i++) {
+    //         if (gallery[i] === this.img.src) {
+
+    //         }
+    //     }
+    // }  
 }
