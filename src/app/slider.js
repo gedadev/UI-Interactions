@@ -21,6 +21,7 @@ export class Slider {
         this.img.src = gallery[0];
         this.navFunction(gallery);
         let interval = this.startSlider(gallery);
+        this.navSelector(gallery);
     }
     
     startSlider(gallery) {        
@@ -32,7 +33,7 @@ export class Slider {
     }
     
     genNav(gallery) {
-        gallery.forEach(element => {
+        gallery.forEach(() => {
             const i = document.createElement('i');
             i.classList.add('fa-solid');
             i.classList.add('fa-circle');
@@ -51,6 +52,15 @@ export class Slider {
                 this.navElements[i].classList.remove('fa-circle-dot');
             }
         }
+    }
+
+    navSelector(gallery) {
+        this.navElements.forEach((element, index) => {
+            element.addEventListener('click', () => {
+                this.img.src = gallery[index];
+                this.navFunction(gallery);
+            });
+        });
     }
 
     arrowFunction(gallery) {

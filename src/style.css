@@ -98,8 +98,8 @@ body {
 /* slider */
 
 #slider {
-    width: 60%;
-    height: 320px;
+    width: 50%;
+    height: 380px;
     margin-top: 50px;
     display: flex;
     justify-content: space-between;
@@ -119,8 +119,8 @@ body {
 }
 
 #img-container {
-    height: 320px;
-    width: 80%;
+    height: 100%;
+    width: auto;
     display: flex;
     justify-content: center;
     box-shadow: 0px 2px 4px var(--color-4);
@@ -128,12 +128,12 @@ body {
 }
 
 #container {
-    width: 100%;
+    width: auto;
     height: 100%;
 }
  #nav {
     position: absolute;
-    top: 410px;
+    top: 470px;
     background-color: var(--color-1);
     opacity: .7;
     border-radius: 10px;
@@ -145,10 +145,16 @@ body {
     color: var(--color-2);
     padding: 7px 12px;
     font-size: 9px;
+    cursor: pointer;
+    transition: color .3s;
+ }
+
+ #nav > i:hover {
+    color: var(--color-4);
  }
 
  #img {
-    width: 100%;
+    width: auto;
     height: 100%;
     border-radius: 10px;
  }
