@@ -10,10 +10,10 @@
 <body>
     <header id="navbar">
         <div class="items">
-            <a>Item 1</a>
+            <a href="#slider">Gallery</a>
         </div>
         <div class="items">
-            <a>Item 2</a>
+            <a href="#form-container">Register</a>
         </div>
         <div class="items">
             <a id="drop">Item 3</a>
@@ -40,6 +40,33 @@
             </div>
         </div>
         <div class="arrow"><i class="fa-solid fa-circle-arrow-right arrow" id="right-arrow"></i></div>
+    </section>
+    <section id="form-container">
+        <form action="" id="form" novalidate>
+            <div class="input-container">
+                <label for="email">Email:</label>
+                <input type="text" id="email">
+            </div>
+            <div class="input-container">
+                <label for="country">Country:</label>
+                <input type="text" id="country">
+            </div>
+            <div class="input-container">
+                <label for="zip-code">Zip Code:</label>
+                <input type="text" id="zip-code">
+            </div>
+            <div class="input-container">
+                <label for="password">Password</label>
+                <input type="text" id="password">
+            </div>
+            <div class="input-container">
+                <label for="confirm-pass">Confirm Password</label>
+                <input type="text" id="confirm-pass">
+            </div>
+            <div class="input-container">
+                <input type="submit" value="Register">
+            </div>
+        </form>
     </section>
     <script src="main.js"></script>
 </body>
