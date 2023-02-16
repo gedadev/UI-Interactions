@@ -46,27 +46,27 @@
             <p>Sign Up</p>
             <div class="input-container">
                 <label for="email">Email:</label>
-                <input type="email" id="email">
+                <input type="email" id="email" autocomplete=off required>
                 <span class="error"></span>
             </div>
             <div class="input-container">
                 <label for="country">Country:</label>
-                <input type="text" id="country">
+                <input type="text" id="country" autocomplete=off required>
                 <span class="error"></span>
             </div>
             <div class="input-container">
                 <label for="zip-code">Zip Code:</label>
-                <input type="tel" id="zip-code">
+                <input type="tel" id="zip-code" autocomplete=off required pattern="\d{5}" maxlength="5">
                 <span class="error"></span>
             </div>
             <div class="input-container">
                 <label for="password">Password:</label>
-                <input type="password" id="password">
+                <input type="password" id="password" autocomplete=off required pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z])">
                 <span class="error"></span>
             </div>
             <div class="input-container">
                 <label for="confirm-pass">Confirm Password:</label>
-                <input type="password" id="confirm-pass">
+                <input type="password" id="confirm-pass" autocomplete=off required>
                 <span class="error"></span>
             </div>
             <div id="submit-div">
