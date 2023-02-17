@@ -45,30 +45,31 @@
         <form action="" id="form" novalidate>
             <p>Sign Up</p>
             <div class="input-container">
-                <label for="email">Email:</label>
-                <input type="email" id="email" autocomplete=off required>
+                <label for="email">Email: (*)</label>
+                <input type="email" id="email" autocomplete=off required pattern="[\w.%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}">
                 <span class="error"></span>
             </div>
             <div class="input-container">
-                <label for="country">Country:</label>
+                <label for="country">Country: (*)</label>
                 <input type="text" id="country" autocomplete=off required>
                 <span class="error"></span>
             </div>
             <div class="input-container">
-                <label for="zip-code">Zip Code:</label>
+                <label for="zip-code">Zip Code: (*)</label>
                 <input type="tel" id="zip-code" autocomplete=off required pattern="\d{5}" maxlength="5">
                 <span class="error"></span>
             </div>
             <div class="input-container">
-                <label for="password">Password:</label>
-                <input type="password" id="password" autocomplete=off required pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z])">
+                <label for="password">Password: (*)</label>
+                <input type="password" id="password" autocomplete=off required pattern="(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{8,}" minlength="8">
                 <span class="error"></span>
             </div>
             <div class="input-container">
-                <label for="confirm-pass">Confirm Password:</label>
+                <label for="confirm-pass">Confirm Password: (*)</label>
                 <input type="password" id="confirm-pass" autocomplete=off required>
                 <span class="error"></span>
             </div>
+            <span>(*) field required</span>
             <div id="submit-div">
                 <input type="submit" value="Sign Up Now" id="submit-btn">
             </div>
