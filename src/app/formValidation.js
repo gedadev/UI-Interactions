@@ -12,6 +12,9 @@ export class Validations {
                 } else {
                     Validations.inputValidation(this.input[i], this.errorMsg[i], i);
                 }
+                if (i === 4) {
+                    this.validPassword();
+                }
             });
             this.input[i].addEventListener('focusout', () => {
                 this.errorMsg[i].style.display = "none";
@@ -22,8 +25,14 @@ export class Validations {
         }
     }
 
+    validPassword() {
+        if (this.input[4].value !== this.input[3].value) {
+            this.errorMsg[4].textContent = "Password doesn't match"
+            this.errorMsg[4].style.display = "block";
+        }
+    }
+
     static inputValidation(currInput, currMsg, index) {
-        console.log(index);
         if (currInput.validity.valueMissing) {
             currMsg.textContent = "You must fill this field to continue";
             currMsg.style.display = "block";
