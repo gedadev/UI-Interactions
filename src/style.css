@@ -195,11 +195,12 @@ body {
     gap: 10px;
  }
 
- .input-container > input {
+ .input-container > input, .input-container > select {
     border: none;
     border-radius: 5px;
     height: 26px;
     padding: 2px 10px;
+    background-color: #fff;
  }
 
 #submit-div {

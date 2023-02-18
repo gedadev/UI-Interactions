@@ -51,12 +51,17 @@
             </div>
             <div class="input-container">
                 <label for="country">Country: (*)</label>
-                <input type="text" id="country" autocomplete=off required>
+                <select name="country" id="country-select" required>
+                    <option value="">--Select an option--</option>
+                    <option value="us">USA</option>
+                    <option value="ca">Canada</option>
+                    <option value="mx">Mexico</option>
+                </select>
                 <span class="error"></span>
             </div>
             <div class="input-container">
                 <label for="zip-code">Zip Code: (*)</label>
-                <input type="tel" id="zip-code" autocomplete=off required pattern="\d{5}" maxlength="5">
+                <input type="tel" id="zip-code" autocomplete=off required>
                 <span class="error"></span>
             </div>
             <div class="input-container">

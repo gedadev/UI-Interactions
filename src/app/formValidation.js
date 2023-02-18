@@ -15,6 +15,9 @@ export class Validations {
                 if (i === 4) {
                     this.validPassword();
                 }
+                if (i === 1) {
+                    Validations.setZipCodeAtt(this.input[i], this.input[i + 1]);
+                }
             });
             this.input[i].addEventListener('focusout', () => {
                 this.errorMsg[i].style.display = "none";
@@ -29,6 +32,25 @@ export class Validations {
         if (this.input[4].value !== this.input[3].value) {
             this.errorMsg[4].textContent = "Password doesn't match"
             this.errorMsg[4].style.display = "block";
+        }
+    }
+
+    static setZipCodeAtt(country, zipCode) {
+        switch (country.value) {
+            case 'us':
+                zipCode.pattern = '\\d{5}(?:[-\\s]\\d{4})?';
+                zipCode.maxLength = "10";
+                break;
+            case 'ca':
+                zipCode.pattern = "[A-Za-z]\\d[A-Za-z](?:[-\\s])\\d[A-Za-z]\\d";
+                zipCode.maxLength = "7";
+                break;
+            case 'mx':
+                zipCode.pattern = '\\d{5}';
+                zipCode.maxLength = "5";
+                break;
+            default:
+                break;
         }
     }
 
