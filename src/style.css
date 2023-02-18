@@ -105,7 +105,6 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    display: none;
 }
 
 .arrow > i {
@@ -166,6 +165,7 @@ body {
  #form-container {
     margin: 150px 0;
     width: 500px;
+    display: none;
 }
 
 #form > p {
