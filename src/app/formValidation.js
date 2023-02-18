@@ -25,6 +25,11 @@ export class Validations {
             this.input[i].addEventListener('focusin', () => {
                 Validations.inputValidation(this.input[i], this.errorMsg[i], i);
             });
+            this.input.addEventListener('submit', (e) => {
+                if (!this.input[i].validity.valid) {
+                    e.preventDefault();
+                }
+            });
         }
     }
 
